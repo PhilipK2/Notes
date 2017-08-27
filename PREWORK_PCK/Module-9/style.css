@@ -1,0 +1,40 @@
+h1 {
+	text-align: center;
+}
+.red {
+	color: red;
+}
+.blue {
+	color: blue;
+}
+.green {
+	color: green;
+}
+.big {
+	font-size: 64px;
+}
+.tiny{
+	font-size: 8px;
+}
+.centered {
+	text-align: center;
+}
+.bold{
+	font-weight: bold;
+}
+.fam {
+	font-family: sans-serif;
+}
+.multi {
+	font-size: 32px;
+	font-weight: bold;
+	color: orange;
+}
+.styledFont {
+	color: red;
+}
+#styledImage {
+	border-color: yellow;
+	border-width: 17px;
+	border-style: dashed;
+}

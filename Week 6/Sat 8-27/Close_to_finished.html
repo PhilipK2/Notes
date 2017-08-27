@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+	<title>NY Times App</title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<script
+	  src="https://code.jquery.com/jquery-3.2.1.min.js"
+	  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+	  crossorigin="anonymous">
+	</script>
+
+</head>
+<body>
+
+<div class= 'container'>
+        <div class= 'jumbotron text-center'>
+            <h1>New York Times Search</h1>
+        </div>
+        <div class='row'>
+            <div class= 'col-md-12'>
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Search Parameters</h3>
+                    </div>
+                    <div class="panel-body">
+                        <form>
+                            <div class="form-group">
+                                <label>Search Term:</label>
+                                <input type="text" class="form-control" id="search">
+                            </div>
+                            <div class="form-group">
+                                <label>Number of Records to Retrieve:</label>
+                                <select class="form-control" id='recordsNumber'>
+                                    <option>1</option>
+                                    <option>5</option>
+                                    <option>10</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Start Year (Optional):</label>
+                                <input type="text" class="form-control" id='startYear'>
+                            </div>
+                            <div class="form-group">
+                                <label>End Year (Optional):</label>
+                                <input type="text" class="form-control" id='endYear'>
+                            </div>
+                            
+                            <button type="button" class="btn btn-primary" id="searchBtn">Search</button>
+                            <button type="button" class="btn btn-primary" id='clearBtn'>Clear Results</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class='row'>
+            <div class= 'col-md-12'>
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Top Articles</h3>
+                    </div>
+                    <div class="panel-body" id='articleDisplay'>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+	
+
+
+$("#searchBtn").on("click", function(){
+	event.preventDefault();
+	var search = $("#search").val();
+	console.log(search);
+	var beginDate = $("#startYear").val().trim();
+	var endDate = $("#endYear").val().trim();
+
+	var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
+		url += '?' + $.param({
+		  'api-key': "140bc8323321409aa2f25b9b5a1f60bb",
+		  'q': search,
+		  // 'begin_date': beginDate,
+		  // 'end_date:': endDate,
+		 
+		});
+
+
+
+	$.ajax({
+	  url: url,
+	  method: 'GET',
+	}).done(function(result) {
+	  console.log(result);
+	  console.log(url);
+	  
+	  $('#searchBtn').on("click", function(){
+			var searchResult = $('#search').val();
+			console.log(searchResult);
+			
+		});
+
+		var articleNumbers = parseInt($("#recordsNumber").val().trim());
+
+
+	  for (var i=0;i<articleNumbers; i++){ 
+	  var responseAccess = result.response.docs[i];
+	  console.log(responseAccess);
+	  
+
+	  // headline
+	  var headline = (responseAccess.headline.main);
+	  $("#articleDisplay").append("<h1>" + headline + "</h1>");
+	  //byline
+	  var byline = (responseAccess.byline.original);
+	  $("#articleDisplay").append("<h5>" + byline + "</h5>");
+	  //section
+	  var section = (responseAccess.new_desk);
+	  $("#articleDisplay").append("<h5>" + section + "</h5>");
+	  //date
+	  var date = (responseAccess.pub_date);
+	  $("#articleDisplay").append(date);
+	  //url
+	  var pubURL = $("<a>");
+	  var actualURL = (responseAccess.web_url);
+	  pubURL.attr("href", actualURL);
+	  pubURL.attr("target", '#');
+	  pubURL.text("ARTICLE");
+	  $("#articleDisplay").append(pubURL);
+};
+}).fail(function(err) {
+  throw err;
+});	
+
+}); //on click function
+$("#clearBtn").click(function(){
+	$("#articleDisplay").empty();
+});
+
+}); //on document ready function
+
+
+</script>
+
+</body>
+</html>

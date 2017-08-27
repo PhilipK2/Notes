@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang=“en-us”>
+
+<head>
+  <title>Rock Paper Scissors Part 2</title>
+</head>
+
+<body>
+
+ <div id=“game”>
+
+   <p>Start by pressing r,p, or s. </p>
+
+   <p>Your choice is: <span id=“userChoice”></span></p>
+    <p>Computer Choice is: <span id=“computerGuess”></span></p>
+
+   <p>Wins: <span id=“wins”>0</span></p>
+    <p>Losses: <span id=“losses”>0</span></p>
+    <p>Ties: <span id = “ties”>0</span></p>
+
+ </div>
+
+ <script type=“text/javascript”>
+
+   // Creates an array that lists out all of the options (Rock, Paper, or Scissors).
+    var computerChoices = [“r”, “p”, “s”];
+    var tie = 0;
+    var win = 0;
+    var losses = 0;
+    
+   // This function is run whenever the user presses a key.
+    document.onkeyup = function(event) {
+
+     // Determines which key was pressed.
+      var userGuess = event.key;
+
+     // Randomly chooses a choice from the options array. This is the Computer’ guess.
+
+     if (userGuess === “r” || userGuess === “s” || userGuess === “p”){
+           var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+
+         //  alert(“User guess: ” + userGuess);
+
+         // alert(“Computer guess: ” + computerGuess);
+
+
+         if (userGuess===computerGuess){
+            tie++;
+            document.getElementById(“ties”).textContent = tie;
+          } else if(userGuess===‘r’&&computerGuess===“s”){
+            win++;
+            document.getElementById(“wins”).textContent = win;
+          }
+            else if(userGuess===“p”&&computerGuess===“r”){
+            win++;
+            document.getElementById(“wins”).textContent=win;
+          }
+            else if(userGuess===“s”&&computerGuess===“p”){
+            win++;
+            document.getElementById(“wins”).textContent=win;
+          }  
+         else if(userGuess===“s”&&computerGuess===“r”){
+            losses++;
+            document.getElementById(“losses”).textContent=losses;
+          } else if (userGuess===“r”&&computerGuess===“p”){
+            losses++;
+            document.getElementById(“losses”).textContent=losses;
+          } else if (userGuess===“p”&&computerGuess===“s”){
+            losses++;
+            document.getElementById(“losses”).textContent=losses;
+          };
+
+         };
+      };
+
+     // Alerts the key the user pressed (userGuess).
+
+     // Alerts the Computer’s guess.
+
+ </script>
+
+</body>
+
+</html>

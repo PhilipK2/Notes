@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		
+	</title>
+	<script
+  src="http://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+</head>
+<body>
+<div id = 'myButton'>
+
+</div>
+</body>
+<script type="text/javascript">
+// CRASH COURSE JS
+// ==========================================================
+// 1. BASIC VARIABLES
+	var basicVariable = 'Basic variable';
+	console.log(basicVariable);
+// ==========================================================
+// Create a basic variable
+// 2. ARRAYS
+	var words = ["spider", "man", "super", "guy", "bat"];
+	console.log(words);
+// ==========================================================
+// Create an array of five strings
+// Create an array of five numbers
+// 3. FOR LOOPS
+	for (var i = 0; i < 5; i++){
+		var name= "my name is Bob five times";
+		console.log(name);
+	};
+		for (var i = 0; i < words.length; i++){
+			console.log(words[i]);
+	};
+// ==========================================================
+// Create a for loop that loops through and prints "My name is Bob five times"
+// Create a for loop that loops through your five string array
+// 4. FUNCTIONS
+	 function myFunction(one, two){
+	 	var total = one/two;
+	 	console.log(total);
+		console.log(one);
+		console.log(two);
+
+	};
+	
+	myFunction(1 , 2);
+
+	function arrayFunction(wordArray) {
+		for (var j = 0; j < words.length; j++){
+			console.log(wordArray[j]);		
+		}
+	};
+	arrayFunction(words);
+// ==========================================================
+// Create a function that takes two numbers and divides the first number by the second.
+// Then call that function
+// Create a function that takes in an array of numbers and then loops through the array and prints out numbers.
+// Then call that function
+// 5. OBJECTS
+	var bicycle = {
+		color:'black',
+		tire:2,
+		seat:1
+	};
+	console.log(bicycle.color);
+
+	var objectArray = [
+	 {color:'black'
+	},
+
+ 	{wheels:4
+	},
+
+	{size:9
+	},
+
+	{material:'metal'
+	},
+
+	{wheels:7	
+	}
+
+	];
+	console.log(objectArray);
+
+	console.log(objectArray[0].color);
+// ==========================================================
+// Create a JavaScript Object
+// Console log any three of the properties in that object
+// Create an Array of 5 Objects
+// Console log 3 properties for every one of the five objects
+// 6. JQUERY EVENTS
+var myButton = $('<button>');
+$("#myButton").append(myButton.text('clickme').addClass('event'));
+
+
+$(".event").click(function(){
+    alert("clicked");
+});
+
+
+// ==========================================================
+// Create a basic html button then create an onClick event that triggers an on click event.
+// 7. OVERALL STRUCTURE
+// ==========================================================
+// Talk to student a little about the approach for "getting started" on an application.
+// Talk about the concept of variables, functions, calls.
+
+
+</script>
+</html>

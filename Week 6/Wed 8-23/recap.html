@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+
+    <script type="text/javascript">
+
+        var movieArr = ['Avatar','Titanic','Toy Story'];
+        var newEl;
+
+        for (var i=0;i<movieArr.length;i++) {
+            $.ajax({
+                url:'http://www.omdbapi.com/?apikey=40e9cece&t='+movieArr[i],
+                method: 'GET'
+            })
+            .done(function(resp) {
+                console.log(resp);
+                console.log("i is:"+i);
+                newEl = $('<h3>').text('Year for '+ resp.Title + ": "+resp.Year);
+                $('body').append(newEl);
+            });
+        }
+                //basically is explaining why the for loop doesnt work for last class "Monday" activity.v
+    </script>
+
+</body>
+</html>

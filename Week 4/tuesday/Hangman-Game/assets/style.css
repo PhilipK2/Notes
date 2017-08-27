@@ -1,0 +1,14 @@
+#tron {
+	background-color: red !important;
+	color: white !important;
+	font-size: 16px;
+}
+.img-responsive {
+	border: solid 1px red;
+}
+body{
+	background-image: url('images/brickwall_@2X.png');
+}
+h3{
+	font-size: 72px;
+}

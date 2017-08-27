@@ -1,0 +1,37 @@
+h1{
+	font-family: 'Open Sans Condensed', sans-serif;
+}
+h3{font-size: 24px;
+
+}
+h4{
+	font-weight: bolder;
+	line-height: 25px;
+	font-family: 'Artifika', serif;
+}
+p{
+	font-family: 'Lemonada', cursive;
+}
+
+a:hover {
+	background-color: black;
+
+
+}
+a:active{
+	background-color: orange;
+
+
+}
+a:focus{
+	background-color: pink;
+}
+a:visited{
+	background-color: yellow;
+}
+a:default{
+	background-color: red;
+}
+p:hover{
+	color:red;
+}

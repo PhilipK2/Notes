@@ -1,0 +1,19 @@
+jQuery - jQuery is a fast, small, and feature-rich JavaScript library. It makes things like HTML document traversal and manipulation, event handling, animation, and Ajax much simpler with an easy-to-use API that works across a multitude of browsers. Basically it is an easy to use API that effects the above properties.
+
+Node.js - is an open-source, cross-platform JavaScript run-time environment for executing JavaScript code server-side. Node.js enables JavaScript to be used for server-side scripting, and runs scripts server-side to produce dynamic web page content before the page is sent to the user's web browser. Consequently, Node.js has become one of the foundational elements of the "JavaScript everywhere" paradigm,[4] allowing web application development to unify around a single programming language, rather than rely on a different language for writing server side scripts. AKA easy .Mode
+
+AngularJS - JavaScript-based open-source front-end web application framework mainly maintained by Google and by a community of individuals and corporations to address many of the challenges encountered in developing single-page applications. The JavaScript components complement framework used for developing cross-platform mobile apps. 
+
+React - is an open-source JavaScript library for building user interfaces. It is maintained by Facebook, Instagram and a community of individual developers and corporations.
+
+LESS - is a dynamic style sheet language that can be compiled into CSS and run on the client side or server side. the main difference between Less and other CSS precompilers being that Less allows real-time compilation via less.js by the browser. also, easier syntax and framework to CSS.
+
+Ruby - A dynamic, open source programming language with a focus on simplicity and productivity. It has an elegant syntax that is natural to read and easy to write.
+
+Python - a widely used high-level programming language for general-purpose programming. Python has a design philosophy which emphasizes code readability and a syntax which allows programmers to express concepts in fewer lines of code than languages such as C++ or Java. The language provides constructs intended to enable writing clear programs on both a small and large scale.
+
+API - Application program interface is a set of routines, protocols, and tools for building software applications. An API specifies how software components should interact. Additionally, APIs are used when programming graphical interfaces
+
+Ajax - client-side script that communicates to and from a server/database without the need for a postback or a complete page refresh. The best definition I've read for Ajax is “the method of exchanging data with a server, and updating parts of a web page – without reloading the entire page."
+
+Gruntjs - Grunt is a JavaScript task runner, a tool used to automatically perform frequently used tasks such as minification, compilation, unit testing, linting, etc. It uses a command-line interface to run custom tasks defined in a file.

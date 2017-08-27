@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="UTF-8">
+  <title>Hangman Game</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="jumbotron text-center" id='tron'>
+        <h1>Hangman Game</h1>
+        <h2>Spider-man Edition!</h2>
+        </div>
+
+      <div class="col-md-6 text-center">
+
+        <div class="pannel panel-danger panel-body">
+          <h3>Press any ket to get started!</h3>
+        </div>
+        <div id="game">
+          <div class="panel panel-danger">
+          <div class="panel-heading">
+            <h3 class="panel-title">Current word:</h3>
+          </div>
+          <div class="panel-body">
+            <p id="word"></p>
+          </div>
+        </div>
+         <div class="panel panel-danger">
+          <div class="panel-heading">
+            <h3 class="panel-title">Guesses remaining</h3>
+          </div>
+          <div class="panel-body">
+            <p id="letterCount"></p>
+          </div>
+        </div>
+         <div class="panel panel-danger">
+          <div class="panel-heading">
+            <h3 class="panel-title">Letters already guessed:</h3>
+          </div>
+          <div class="panel-body">
+            <p id="lettersGuessed"></p>
+          </div>
+        </div>
+ 
+        </div>
+        <div class="col-md-2">   
+        </div>
+      </div>
+      <div class="col-md-6 text-center">
+        <img src="assets\images\spidey.png" class="img-responsive" alt="Responsive image">
+      </div>
+  </div> 
+
+
+
+  <script type="text/javascript" src='test.js'></script>
+
+</body>
+</html>

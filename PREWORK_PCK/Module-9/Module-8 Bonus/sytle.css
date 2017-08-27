@@ -1,0 +1,68 @@
+body {
+	margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: sans-serif;
+}
+h1 {
+	font-weight: bold;
+	text-align: center;
+	font-size: 24px;
+	text-shadow: 0 1px 2px #black;
+}
+p {
+	padding: 25;
+}
+header {
+	background-color: black;
+}
+img {
+	width: 250px;
+}
+table {
+	margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+iframe {
+    display: block;
+}
+
+#logo {
+	display: block;
+	margin: auto;
+}
+.bio {
+	display: block;
+	margin: auto;
+	text-align: center;
+}
+.table {
+    height: 200px;
+    position: relative;
+    border: 7px solid gray; 
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+.album1 {
+	position: absolute;
+    right: 50%;
+    padding-right: 125px;
+}
+.album2 {
+	position: absolute;
+    left: 50%;
+    padding-left: 125px;
+}
+.containter {
+	position: relative;
+    width: 100%;
+}
+.video {
+    
+}

@@ -1,0 +1,191 @@
+body{
+	background-image: url('../images/concrete-texture.png');
+	font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+	color: #777777;
+}
+
+h1, h2{
+	color: #4aaaa5;
+}
+
+li{
+	display: inline;
+	justify-content: center;
+
+}
+a{
+	color: #777777;
+	text-decoration: none;
+}
+li a{
+	padding: 10px;
+}
+p{
+	margin-right: 15px;
+}
+
+footer{
+	clear: both;
+	background-color: #666666;
+	color: #777777;
+	position: absolute;
+    bottom: 0;
+    height: 50px;
+    width: 960px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.header{
+	border: solid #cccccc 1px;
+	background-color: #ffffff;
+	display: flex;
+}
+.nav{
+	padding-bottom: 20px;
+	padding: 25px 50px 0px 375px;
+	display: inline;
+}
+.about{
+	background-color: #ffffff;
+	padding: 15px;
+	margin: 15px;
+	border: solid #dddddd 1px;
+	width: 595px;
+	float: left;
+}
+.connect{
+	background-color: #ffffff;
+	padding: 15px;
+	margin: 15px;
+	border: solid #dddddd 1px;
+	width: 240px;
+	float: left;
+}
+
+/****************************************************************
+*****************************************************************
+PORTFOLIO IMAGES CSS */
+.photos{
+
+}
+
+.img1{
+	float: left;
+}
+
+.img2{
+	float: left;
+}
+.img3{
+	float: left;	
+}
+.img4{
+	float: left;
+}
+.img5{
+	float: left;	
+}
+
+/****************************************************************
+*****************************************************************
+PORTFOLIO IMAGES CSS */
+
+#name{
+	background-color: #4aaaa5;
+	color: #ffffff;
+	padding: 15px;
+	width: 235px;
+	margin-left: 50px;
+	font-size: 32px;
+	font-family: 'Georgia', Times, Times New Roman, serif;
+}
+
+#PhilPhoto{
+	height: 200px;
+	width: 250px;
+	float :left;
+	padding: 20px;
+}
+
+#headerone{   /* ABOUT HEADING */
+	font-size: 28px;
+	border-bottom: solid #cccccc 1px;
+	margin-bottom: 15px;
+	padding-bottom: 25px;
+	font-weight: bold;
+	font-family: 'Georgia', Times, Times New Roman, serif;
+}
+#headertwo{   /* CONNECT HEADING */
+	font-size: 18px;
+	border-bottom: solid #cccccc 1px;
+	align-content: center;
+	font-weight: bold;
+	margin-bottom: 15px;
+	padding-bottom: 25px;
+	font-family: 'Georgia', Times, Times New Roman, serif;
+
+}
+#headerthree{  /* CONTACT HEADING */
+	font-size: 28px;
+	border-bottom: solid #cccccc 1px;
+	align-content: center;
+	font-weight: bold;
+	margin-bottom: 15px;
+	padding-bottom: 25px;
+	font-family: 'Georgia', Times, Times New Roman, serif;
+
+}
+#empty{
+	background-color: #4aaaa5;
+	position: absolute;
+    bottom: 0;
+    height: 57px;
+    width: 960px;
+    margin: 0 auto; 
+}
+#wrap{
+	width:960px;
+	margin: 0 auto;
+}
+
+
+/***************************************************************************
+****************************************************************************
+***************************************************************************/
+/*FORM CSS*/
+
+input,
+label,
+textarea {
+    width: 96%;
+}
+
+label {
+ 	font-weight: bold;
+    margin-bottom: 5px;
+    margin:8px;
+}
+
+input,
+select,
+textarea {
+    background: #f9f9f9;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    box-shadow: inset 0 1px 1px #e1e1e1;
+    font-size: 14px;
+    padding: 8px;
+}
+
+button {
+    background-color: #4aaaa5;
+    border: none;
+    color: white;
+    padding: 15px 25px;
+    text-align: center;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-family: arial;
+}

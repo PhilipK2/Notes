@@ -1,0 +1,12 @@
+.jumbotron {
+	background-color: #e11c07;
+	color: white;
+	font-size: 16px;
+}
+/*.img-responsive {
+	border: solid 1px red;
+	border-radius: 8px;
+}*/
+body{
+	background-image: url('images/brickwall_@2X.png');
+}

@@ -35,9 +35,9 @@
                             <div class="form-group">
                                 <label>Number of Records to Retrieve:</label>
                                 <select class="form-control" id='recordsNumber'>
-                                    <option>1</option>
-                                    <option>5</option>
-                                    <option>10</option>
+                                    <option class="recordsOptions">1</option>
+                                    <option class="recordsOptions">5</option>
+                                    <option class="recordsOptions">10</option>
                                 </select>
                             </div>
                             <div class="form-group">
@@ -75,7 +75,9 @@
 
 $(document).ready(function(){
 	
-
+function clear(){
+	$("#articleDisplay").empty();
+}
 
 $("#searchBtn").on("click", function(){
 	event.preventDefault();
@@ -101,49 +103,55 @@ $("#searchBtn").on("click", function(){
 	}).done(function(result) {
 	  console.log(result);
 	  console.log(url);
-	  
 	  $('#searchBtn').on("click", function(){
+	  	clear();
 			var searchResult = $('#search').val();
 			console.log(searchResult);
 			
 		});
-
 		var articleNumbers = parseInt($("#recordsNumber").val().trim());
+					
+		console.log(articleNumbers);
+
+	  for(var i = 0; i < articleNumbers; i++){
+		  var responseAccess = result.response.docs[i];
+		  console.log(responseAccess);
+		  
+		  var articleRank = i + 1;
+		  // headline
+		  var headline = (responseAccess.headline.main);
+		  $("#articleDisplay").append("<h1>" + articleRank + " "+ headline + "</h1>");
+		  //byline
+		  var byline = (responseAccess.byline.original);
+		  $("#articleDisplay").append("<h5>" + byline + "</h5>");
+		  //section
+		  var section = (responseAccess.new_desk);
+		  $("#articleDisplay").append("<h5>" + section + "</h5>");
+		  //date
+		  var date = (responseAccess.pub_date);
+		  $("#articleDisplay").append(date);
+		  //url
+		  var pubURL = $("<a>");
+		  var actualURL = (responseAccess.web_url);
+		  pubURL.attr("href", actualURL);
+		  pubURL.attr("target", '#');
+		  pubURL.text("ARTICLE");
+		  $("#articleDisplay").append(pubURL);
+		};
 
 
-	  for (var i=0;i<articleNumbers; i++){ 
-	  var responseAccess = result.response.docs[i];
-	  console.log(responseAccess);
-	  
 
-	  // headline
-	  var headline = (responseAccess.headline.main);
-	  $("#articleDisplay").append("<h1>" + headline + "</h1>");
-	  //byline
-	  var byline = (responseAccess.byline.original);
-	  $("#articleDisplay").append("<h5>" + byline + "</h5>");
-	  //section
-	  var section = (responseAccess.new_desk);
-	  $("#articleDisplay").append("<h5>" + section + "</h5>");
-	  //date
-	  var date = (responseAccess.pub_date);
-	  $("#articleDisplay").append(date);
-	  //url
-	  var pubURL = $("<a>");
-	  var actualURL = (responseAccess.web_url);
-	  pubURL.attr("href", actualURL);
-	  pubURL.attr("target", '#');
-	  pubURL.text("ARTICLE");
-	  $("#articleDisplay").append(pubURL);
-};
 }).fail(function(err) {
   throw err;
 });	
 
 }); //on click function
+
 $("#clearBtn").click(function(){
-	$("#articleDisplay").empty();
+    clear();
 });
+
+
 
 }); //on document ready function
 

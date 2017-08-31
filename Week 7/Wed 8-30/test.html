@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBBzFYQOf8xPPCgF9xmUmNMliTMNPMuK1Y",
+    authDomain: "newproj-47722.firebaseapp.com",
+    databaseURL: "https://newproj-47722.firebaseio.com",
+    projectId: "newproj-47722",
+    storageBucket: "newproj-47722.appspot.com",
+    messagingSenderId: "621731477120"
+  };
+  firebase.initializeApp(config);
+
+
+
+
+  var db = firebase.database();
+  db.ref('/').set("Root data");
+  db.ref("/level1").set("My name is Philip");
+  db.ref("/level2").set({'a':23,'b':24});
+  db.ref('/level2/sublevel2').set("sublevel2");
+  db.ref('/level3/sublevel3').set("inner");
+
+  var mrRef = db.ref('level3/sublevel3');
+  //myRef.set()
+
+//EVENTS--------------------------------------------------
+  db.ref("/level3/sublevel3").on('value',function(dbValue){ 
+    alert("changed");
+  });
+
+var a=1;  
+document.onkeyup = function(){
+  db.ref('/level3/sublevel3').set(a);
+  a++;
+};
+
+</script>
+
+</body>
+</html>

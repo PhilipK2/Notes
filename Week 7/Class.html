@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Employee Tracker</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous">
+    </script>
+</head>
+
+<body>
+    <div class='container'>
+        <div class='jumbotron text-center'>
+            <h1>Employee Data Management</h1>
+            <h2>A comprehensive directory of employee Billable Hours</h2>
+        </div>
+        <div class='row'>
+            <div class='col-md-12'>
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Current Employees</h3>
+                    </div>
+                    <div class="panel-body">
+                        <table class="table table-hover" id='employee-table'>
+                            <thead>
+                                <tr>
+                                    <th>Employee Name</th>
+                                    <th>Role</th>
+                                    <th>Start Date</th>
+                                    <th>Months Worked</th>
+                                    <th>Monthly Rate ($)</th>
+                                    <th>Total Billed ($)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class='row'>
+            <div class='col-md-12'>
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Add Employee</h3>
+                    </div>
+                    <div class="panel-body">
+                        <form>
+                            <div class="form-group">
+                                <label>Employee Name</label>
+                                <input type="text" class="form-control" id="name">
+                            </div>
+                            <div class="form-group">
+                                <label>Role</label>
+                                <input type="text" class="form-control" id="role">
+                            </div>
+                            <div class="form-group">
+                                <label>Start Date (DD/MM/YY)</label>
+                                <input type="text" class="form-control" id='startDate'>
+                            </div>
+                            <div class="form-group">
+                                <label>Monthly Rate</label>
+                                <input type="number" class="form-control" id='rate'>
+                            </div>
+
+                            <button type="button" class="btn btn-info" id="submitBtn">Submit</button>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+        <script>
+            var config = {
+                apiKey: "AIzaSyDvpEQYgu3D7bein4z5G-p4C9cDGHZs08g",
+                authDomain: "playtime-86f02.firebaseapp.com",
+                databaseURL: "https://playtime-86f02.firebaseio.com",
+                projectId: "playtime-86f02",
+                storageBucket: "playtime-86f02.appspot.com",
+                messagingSenderId: "213519333968"
+            };
+            firebase.initializeApp(config);
+
+            var db = firebase.database();
+
+
+
+
+
+            $("#submitBtn").on("click", function () {
+                event.preventDefault();
+                var name = $("#name").val().trim();
+                var role = $("#role").val().trim();
+                var startDate = $("#startDate").val().trim();
+                var monthlyRate = $("#rate").val().trim();
+                console.log(name);
+                console.log(role);
+                console.log(startDate);
+                console.log(monthlyRate);
+                
+                newVar = {
+                    name: name,
+                    role: role,
+                    start: startDate,
+                    rate: monthlyRate
+                }
+
+                db.ref().push(newVar);
+                
+            });
+            
+            db.ref().on('child_added', function(snap){
+                console.log(snap.val());
+                var newName = snap.val().name;
+                var newRole = snap.val().role;
+                var newStart = snap.val().start;
+                var newRate = snap.val().rate;
+
+                console.log(newName);
+            });
+
+        </script>
+
+
+</body>
+
+</html>

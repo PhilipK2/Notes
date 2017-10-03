@@ -4,10 +4,8 @@
 <head>
     <title>Employee Tracker</title>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-        crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
     </script>
 </head>
 
@@ -93,7 +91,7 @@
 
 
 
-            $("#submitBtn").on("click", function () {
+            $("#submitBtn").on("click", function() {
                 event.preventDefault();
                 var name = $("#name").val().trim();
                 var role = $("#role").val().trim();
@@ -103,7 +101,7 @@
                 console.log(role);
                 console.log(startDate);
                 console.log(monthlyRate);
-                
+
                 newVar = {
                     name: name,
                     role: role,
@@ -112,10 +110,10 @@
                 }
 
                 db.ref().push(newVar);
-                
+
             });
-            
-            db.ref().on('child_added', function(snap){
+
+            db.ref().on('child_added', function(snap) {
                 console.log(snap.val());
                 var newName = snap.val().name;
                 var newRole = snap.val().role;
@@ -124,7 +122,6 @@
 
                 console.log(newName);
             });
-
         </script>
 
 

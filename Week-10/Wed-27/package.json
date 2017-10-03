@@ -1,0 +1,27 @@
+{
+  "name": "weather",
+  "version": "1.0.0",
+  "description": "my app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PhilipK2/NodeTest.git"
+  },
+  "keywords": [
+    "weather"
+  ],
+  "author": "Philip",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/PhilipK2/NodeTest/issues"
+  },
+  "homepage": "https://github.com/PhilipK2/NodeTest#readme",
+  "dependencies": {
+    "geocoder": "^0.2.3",
+    "inquirer": "^3.3.0",
+    "weather-js": "^2.0.0"
+  }
+}

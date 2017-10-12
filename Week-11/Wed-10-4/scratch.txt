@@ -1,0 +1,46 @@
+admin or user start >> node (CLI.js admin myUserName "highland Park, Tx")
+
+- admin myUserName
+- then is shows you the history of searches (user and location)
+
+
+
+
+
+- capture Process.argv[2,3,4]
+- check the type of user - process.argv[2]
+- user input in on location and search for weather for that location
+- ajax call / module will do the call to weather-js object
+- write searches to log file 
+- read from log file
+- include fs module to write and read
+- output to console the results 
+
+
+- we want to make objects with variable and function that define similar functionallity; divvy up responsibilities into different object
+- use constructors to make these objects
+- call various functions as per the app logic
+
+
+object = state (vars) and behavior (functions)
+
+1. initCode (CLI)= find of admin or user: then call adminFun or userFunc
+
+2. search object (UserSearch) ==> function search (){}; may be it keeps 
+    name, location info as variables
+
+3. write and read object (WeatherAdmin) => function to write and read
+    - 2 functions:
+    - adminFun: (reading the file)
+    - user: (will be doing search (=> call the search function in
+     the Search object) AND be writting to log file)
+
+
+ENTRY point == InitCode => then 
+- WeatherAdmin.admin or WeatherAdmin.user
+
+
+
+ADMIN SHOWS PERVIOUS SEARCH AND USERS
+USER PROVIDES LOCATION AND IS GIVEN WEATHER
+

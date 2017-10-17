@@ -11,7 +11,7 @@ server.listen(PORT, function(){
 
 function handleRequest(req, res) {
     
-      var path = req.url;
+      var path = req.url; 
       switch (path) {
     
 

@@ -1,0 +1,14 @@
+
+{people: ["guy", "guy2", "guy3"]}
+
+<ul class='people_list'>
+{{#each people}}
+<li>{{this}}</li>
+{{/each}}
+</ul>
+
+{{#if author}}
+    <h2> by {{firstName}}</h2>
+    {{#else}}
+    <h2>unknown</h2>
+    {{/if}}
